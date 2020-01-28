@@ -15,21 +15,67 @@ const tableId = 'body_Middel_ctl01_grdgainer';
 
 const headerRowClass = 'footable-header';
 
+const nextAnchorId = 'body_Middel_ctl01_grdgainer_lnk_Next';
+
 const comma = ',';
 
 const localAbsoluteFilePath = '/space/projects/nse-52-week-high-low/output/data.csv';
  
+async function proceed(fileWriteStream, columnCount, table, currentPage, totalPages) {
+
+  logger.info('fetched current page', {
+    currentPage: currentPage,
+    totalPages: totalPages,
+  });
+  
+  // earlier for first page, should be generic
+
+  let tbody = await table.findElement(By.tagName('tbody'));
+  let rows = await tbody.findElements(By.tagName('tr'));
+
+  for (let rowIndex = 0; rowIndex < rows.length-1; rowIndex += 1) {
+
+    let row = rows[rowIndex];
+    let tds = await row.findElements(By.tagName('td'));
+
+    let rowLine = '';
+    for (let columnIndex = 0; columnIndex < columnCount-1; columnIndex += 1) {
+
+      rowLine += csvHelper.getCsvfiedData(await tds[columnIndex].getText()) + comma;
+    }
+    rowLine += csvHelper.getCsvfiedData(await tds[columnCount-1].getText()) + os.EOL;
+
+    logger.info('parsed row line for csv', {
+      rowLine: rowLine,
+    });
+
+    await fileHelper.writeDataInStream(fileWriteStream, rowLine, `(Line) ${rowIndex+1} (Current Page) ${currentPage} (Total Pages) ${totalPages}`);
+
+  }
+}
+
 (async function process() {
   let driver = await new Builder().forBrowser('firefox').build();
   try {
+
+    const fileExists = await fileHelper.checkFileExists(localAbsoluteFilePath);
+    if (fileExists) {
+      await fileHelper.deleteLocalFile(localAbsoluteFilePath);
+    }
+    const fileWriteStream = await fileHelper.createLocalFileWriteStream(localAbsoluteFilePath);
+    
     await driver.get('https://www.adroitfinancial.com/market/52week-high-low');
+    driver.manage().setTimeouts({
+      //pageLoad: 30000,
+      implicit: 30000,
+    });
 
-    const table = await driver.findElement(By.id(tableId));
+    let table = await driver.findElement(By.id(tableId));
 
-    const span = await table.findElements(By.className('pageblue'));
+    let span = await table.findElements(By.className('pageblue'));
 
-    const currentPage = await span[0].getText();
-    const totalPages = await span[1].getText();
+    let currentPage = await span[0].getText();
+    let totalPages = await span[1].getText();
 
     logger.info('fetched total number of pages', {
       currentPage: currentPage,
@@ -78,10 +124,12 @@ const localAbsoluteFilePath = '/space/projects/nse-52-week-high-low/output/data.
     let mapResultResolved = await Promise.all(mapResult);
     const columnCount = mapResultResolved.length;
 
+    /*
     logger.info('fetched headers', {
       columnCount: columnCount,
       headings: mapResultResolved,
     });
+    */
 
     let headerLine = '';
     for (let columnIndex = 0; columnIndex < columnCount-1; columnIndex += 1) {
@@ -93,43 +141,25 @@ const localAbsoluteFilePath = '/space/projects/nse-52-week-high-low/output/data.
       headerLine: headerLine,
     });
 
-    const fileExists = await fileHelper.checkFileExists(localAbsoluteFilePath);
-    if (fileExists) {
-      await fileHelper.deleteLocalFile(localAbsoluteFilePath);
-    }
-    const fileWriteStream = await fileHelper.createLocalFileWriteStream(localAbsoluteFilePath);
-    
     await fileHelper.writeDataInStream(fileWriteStream, headerLine, 'Header');
 
-    
-    // for first page
+    while (currentPage <= totalPages) {
+      await proceed(fileWriteStream, columnCount, table, currentPage, totalPages);
+      if (currentPage != totalPages) {
+        const next = await driver.findElement(By.id(nextAnchorId));
+        let clickPromise = await next.click();
 
-    let tbody = await table.findElement(By.tagName('tbody'));
-    let rows = await tbody.findElements(By.tagName('tr'));
+        await driver.navigate().refresh();
+        // await driver.wait(until.ableToSwitchToFrame('pageblue'));
 
-    for (let rowIndex = 0; rowIndex < rows.length-1; rowIndex += 1) {
-
-      let row = rows[rowIndex];
-      let tds = await row.findElements(By.tagName('td'));
-
-      let rowLine = '';
-      for (let columnIndex = 0; columnIndex < columnCount-1; columnIndex += 1) {
-
-        rowLine += csvHelper.getCsvfiedData(await tds[columnIndex].getText()) + comma;
+        table = await driver.findElement(By.id(tableId));
+        span = await table.findElements(By.className('pageblue'));
+        currentPage = await span[0].getText();
+        totalPages = await span[1].getText();
       }
-      rowLine += csvHelper.getCsvfiedData(await tds[columnCount-1].getText()) + os.EOL;
-  
-      logger.info('parsed row line for csv', {
-        rowLine: rowLine,
-      });
-
-      await fileHelper.writeDataInStream(fileWriteStream, rowLine, `Data Line ${rowIndex+1} Page ${currentPage} Total Pages ${totalPages}`);
-
     }
 
-
-
-    fileHelper.closeWriteStream(fileWriteStream);
+    await fileHelper.closeWriteStream(fileWriteStream);
 
   } finally {
      await driver.quit();
