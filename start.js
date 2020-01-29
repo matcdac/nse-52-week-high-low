@@ -243,6 +243,8 @@ async function proceed(fileWriteStream, columnCount, table, currentPage, totalPa
           typeOfTotalPages: typeof totalPages,
         });
 
+        break;
+
       }
     }
 
@@ -251,4 +253,7 @@ async function proceed(fileWriteStream, columnCount, table, currentPage, totalPa
   } finally {
      await driver.quit();
   }
+
+  logger.info('success');
+  
 })();
