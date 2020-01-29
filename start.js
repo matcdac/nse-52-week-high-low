@@ -150,19 +150,51 @@ async function proceed(fileWriteStream, columnCount, table, currentPage, totalPa
     await fileHelper.writeDataInStream(fileWriteStream, headerLine, 'Header');
 
     while (currentPage <= totalPages) {
+
+      logger.error('proceeding, current page less than or equal to total pages', {
+        pageNo: currentPage,
+        typeOfCurrentPage: typeof currentPage,
+        totalPages: totalPages,
+        typeOfTotalPages: typeof totalPages,
+      });
       await proceed(fileWriteStream, columnCount, table, currentPage, totalPages);
+
       if (currentPage != totalPages) {
+
         const next = await driver.findElement(By.id(nextAnchorId));
         
         await next.click();
 
         logger.info('click happened');
 
+        await driver.sleep(10000);
+
+        logger.info('sleeping for 10 seconds');
+
+        let windowHandles = await driver.getAllWindowHandles();
+
+        logger.info('got window handles', {
+          windowHandleCount: windowHandles.length,
+          windowHandles: windowHandles,
+        });
+        
+        for (let windowHandle of windowHandles){
+          logger.info('switching to window', {
+            windowHandle: windowHandle,
+          });
+          await driver.switchTo().window(windowHandle);
+          logger.info('switched to window', {
+            windowHandle: windowHandle,
+          });
+        }
+
+        // await driver.switchTo().defaultContent();
+
+        // logger.info('switched to default content');
+
         // await next.submit();
 
         // await driver.switchTo().activeElement();
-
-        // await driver.switchTo().defaultContent();
 
         // await driver.navigate().refresh();
         // await driver.wait(until.ableToSwitchToFrame('pageblue'));
@@ -195,8 +227,20 @@ async function proceed(fileWriteStream, columnCount, table, currentPage, totalPa
 
         logger.info('next parse', {
           pageNo: currentPage,
-          totalPages: currentPage,
+          typeOfCurrentPage: typeof currentPage,
+          totalPages: totalPages,
+          typeOfTotalPages: typeof totalPages,
         });
+
+      } else {
+
+        logger.error('not proceeding, current page and total pages equal', {
+          pageNo: currentPage,
+          typeOfCurrentPage: typeof currentPage,
+          totalPages: totalPages,
+          typeOfTotalPages: typeof totalPages,
+        });
+
       }
     }
 

@@ -1,53 +1,60 @@
-{"message":{"entity":"local file","action":"check existence","status":"checking","absoluteFilePath":"/space/projects/nse-52-week-high-low/output/data.csv"},"level":"debug","timestamp":"2020-01-29T00:48:51.608Z"}
-{"message":{"entity":"local file","action":"check existence","status":"exists","absoluteFilePath":"/space/projects/nse-52-week-high-low/output/data.csv"},"level":"debug","timestamp":"2020-01-29T00:48:51.613Z"}
-{"message":{"entity":"local file","action":"delete","status":"initiated","absoluteFilePath":"/space/projects/nse-52-week-high-low/output/data.csv"},"level":"debug","timestamp":"2020-01-29T00:48:51.613Z"}
-{"message":{"entity":"local file","action":"delete","status":"deleted","absoluteFilePath":"/space/projects/nse-52-week-high-low/output/data.csv"},"level":"debug","timestamp":"2020-01-29T00:48:51.614Z"}
-{"message":{"entity":"local file","action":"create write stream","status":"initiated","absoluteFilePath":"/space/projects/nse-52-week-high-low/output/data.csv"},"level":"debug","timestamp":"2020-01-29T00:48:51.615Z"}
-{"message":{"entity":"local file","action":"create write stream","status":"created","absoluteFilePath":"/space/projects/nse-52-week-high-low/output/data.csv"},"level":"debug","timestamp":"2020-01-29T00:48:51.616Z"}
-{"currentPage":"1","totalPages":"176","level":"info","message":"fetched total number of pages","timestamp":"2020-01-29T00:48:54.495Z"}
-{"headerLine":"\"Company Name\",\"52 Week High (₹)\",\"High Date\",\"52 Week Low (₹)\",\"Low Date\"\n","level":"info","message":"parsed header line for csv","timestamp":"2020-01-29T00:48:54.582Z"}
-{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"Header"},"level":"debug","timestamp":"2020-01-29T00:48:54.583Z"}
-{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"Header"},"level":"debug","timestamp":"2020-01-29T00:48:54.584Z"}
-{"currentPage":"1","totalPages":"176","level":"info","message":"fetched current page","timestamp":"2020-01-29T00:48:54.585Z"}
-{"rowLine":"\"20 Microns Ltd.\",\"44.15\",\"29/05/2019\",\"30.70\",\"23/08/2019\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T00:48:54.682Z"}
-{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 1 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:54.682Z"}
-{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 1 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:54.683Z"}
-{"rowLine":"\"3i Infotech\",\"4.55\",\"22/04/2019\",\"1.55\",\"23/08/2019\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T00:48:54.753Z"}
-{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 2 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:54.753Z"}
-{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 2 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:54.754Z"}
-{"rowLine":"\"3M India Ltd.\",\"25,439.95\",\"16/04/2019\",\"16,749.95\",\"16/09/2019\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T00:48:54.829Z"}
-{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 3 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:54.829Z"}
-{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 3 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:54.830Z"}
-{"rowLine":"\"3P Land Holdings\",\"13.70\",\"04/02/2019\",\"5.25\",\"22/08/2019\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T00:48:54.895Z"}
-{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 4 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:54.895Z"}
-{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 4 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:54.896Z"}
-{"rowLine":"\"3rd Rock Multimedia\",\"104.20\",\"19/01/2018\",\"62.50\",\"10/10/2018\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T00:48:54.970Z"}
-{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 5 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:54.970Z"}
-{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 5 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:54.971Z"}
-{"rowLine":"\"5Paisa Capital\",\"270.00\",\"29/05/2019\",\"120.80\",\"23/08/2019\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T00:48:55.036Z"}
-{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 6 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:55.037Z"}
-{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 6 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:55.037Z"}
-{"rowLine":"\"63 Moons Technologie\",\"184.75\",\"10/05/2019\",\"70.85\",\"18/02/2019\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T00:48:55.107Z"}
-{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 7 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:55.108Z"}
-{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 7 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:55.108Z"}
-{"rowLine":"\"8K Miles Software\",\"142.30\",\"18/04/2019\",\"27.95\",\"27/01/2020\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T00:48:55.172Z"}
-{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 8 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:55.173Z"}
-{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 8 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:55.173Z"}
-{"rowLine":"\"A and M Jumbo Bags L\",\"17.86\",\"01/02/2019\",\"7.80\",\"16/09/2019\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T00:48:55.231Z"}
-{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 9 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:55.231Z"}
-{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 9 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:55.231Z"}
-{"rowLine":"\"A2Z Infra Engineer\",\"19.70\",\"19/03/2019\",\"7.00\",\"28/01/2020\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T00:48:55.300Z"}
-{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 10 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:55.300Z"}
-{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 10 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:55.301Z"}
-{"rowLine":"\"Aakash Exploration\",\"87.80\",\"24/12/2019\",\"14.10\",\"22/10/2019\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T00:48:55.366Z"}
-{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 11 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:55.366Z"}
-{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 11 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:55.367Z"}
-{"rowLine":"\"Aaron Industries\",\"51.85\",\"10/01/2020\",\"35.45\",\"22/05/2019\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T00:48:55.441Z"}
-{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 12 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:55.441Z"}
-{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 12 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T00:48:55.442Z"}
-{"message":"click happened","level":"info","timestamp":"2020-01-29T00:48:55.699Z"}
-{"message":"got form","level":"info","timestamp":"2020-01-29T00:48:55.704Z"}
-{"message":"got div","level":"info","timestamp":"2020-01-29T00:48:55.715Z"}
-{"message":"got table","level":"info","timestamp":"2020-01-29T00:48:55.721Z"}
-{"message":"got spans","level":"info","timestamp":"2020-01-29T00:48:55.732Z"}
-{"currentPage":"1","totalPages":"176","level":"info","message":"fetched current page","timestamp":"2020-01-29T00:48:55.763Z"}
+{"message":{"entity":"local file","action":"check existence","status":"checking","absoluteFilePath":"/space/projects/nse-52-week-high-low/output/data.csv"},"level":"debug","timestamp":"2020-01-29T08:22:00.628Z"}
+{"message":{"entity":"local file","action":"check existence","status":"exists","absoluteFilePath":"/space/projects/nse-52-week-high-low/output/data.csv"},"level":"debug","timestamp":"2020-01-29T08:22:00.633Z"}
+{"message":{"entity":"local file","action":"delete","status":"initiated","absoluteFilePath":"/space/projects/nse-52-week-high-low/output/data.csv"},"level":"debug","timestamp":"2020-01-29T08:22:00.633Z"}
+{"message":{"entity":"local file","action":"delete","status":"deleted","absoluteFilePath":"/space/projects/nse-52-week-high-low/output/data.csv"},"level":"debug","timestamp":"2020-01-29T08:22:00.709Z"}
+{"message":{"entity":"local file","action":"create write stream","status":"initiated","absoluteFilePath":"/space/projects/nse-52-week-high-low/output/data.csv"},"level":"debug","timestamp":"2020-01-29T08:22:00.710Z"}
+{"message":{"entity":"local file","action":"create write stream","status":"created","absoluteFilePath":"/space/projects/nse-52-week-high-low/output/data.csv"},"level":"debug","timestamp":"2020-01-29T08:22:00.713Z"}
+{"currentPage":"1","totalPages":"176","level":"info","message":"fetched total number of pages","timestamp":"2020-01-29T08:22:03.309Z"}
+{"headerLine":"\"Company Name\",\"52 Week High (₹)\",\"High Date\",\"52 Week Low (₹)\",\"Low Date\"\n","level":"info","message":"parsed header line for csv","timestamp":"2020-01-29T08:22:03.403Z"}
+{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"Header"},"level":"debug","timestamp":"2020-01-29T08:22:03.403Z"}
+{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"Header"},"level":"debug","timestamp":"2020-01-29T08:22:03.404Z"}
+{"pageNo":"1","totalPages":"176","level":"error","message":"proceeding, current page less than or equal to total pages","timestamp":"2020-01-29T08:22:03.405Z"}
+{"currentPage":"1","totalPages":"176","level":"info","message":"fetched current page","timestamp":"2020-01-29T08:22:03.405Z"}
+{"rowLine":"\"20 Microns Ltd.\",\"44.15\",\"29/05/2019\",\"30.70\",\"23/08/2019\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T08:22:03.502Z"}
+{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 1 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:03.502Z"}
+{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 1 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:03.503Z"}
+{"rowLine":"\"3i Infotech\",\"4.55\",\"22/04/2019\",\"1.55\",\"23/08/2019\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T08:22:03.573Z"}
+{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 2 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:03.574Z"}
+{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 2 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:03.574Z"}
+{"rowLine":"\"3M India Ltd.\",\"25,439.95\",\"16/04/2019\",\"16,749.95\",\"16/09/2019\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T08:22:03.643Z"}
+{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 3 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:03.643Z"}
+{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 3 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:03.644Z"}
+{"rowLine":"\"3P Land Holdings\",\"13.70\",\"04/02/2019\",\"5.25\",\"22/08/2019\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T08:22:03.709Z"}
+{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 4 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:03.709Z"}
+{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 4 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:03.710Z"}
+{"rowLine":"\"3rd Rock Multimedia\",\"104.20\",\"19/01/2018\",\"62.50\",\"10/10/2018\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T08:22:03.780Z"}
+{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 5 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:03.780Z"}
+{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 5 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:03.781Z"}
+{"rowLine":"\"5Paisa Capital\",\"270.00\",\"29/05/2019\",\"120.80\",\"23/08/2019\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T08:22:03.846Z"}
+{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 6 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:03.847Z"}
+{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 6 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:03.847Z"}
+{"rowLine":"\"63 Moons Technologie\",\"184.75\",\"10/05/2019\",\"70.85\",\"18/02/2019\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T08:22:03.914Z"}
+{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 7 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:03.915Z"}
+{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 7 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:03.915Z"}
+{"rowLine":"\"8K Miles Software\",\"142.30\",\"18/04/2019\",\"27.95\",\"27/01/2020\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T08:22:03.982Z"}
+{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 8 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:03.982Z"}
+{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 8 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:03.982Z"}
+{"rowLine":"\"A and M Jumbo Bags L\",\"17.86\",\"01/02/2019\",\"7.80\",\"16/09/2019\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T08:22:04.046Z"}
+{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 9 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:04.046Z"}
+{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 9 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:04.046Z"}
+{"rowLine":"\"A2Z Infra Engineer\",\"19.70\",\"19/03/2019\",\"7.00\",\"28/01/2020\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T08:22:04.180Z"}
+{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 10 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:04.180Z"}
+{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 10 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:04.180Z"}
+{"rowLine":"\"Aakash Exploration\",\"87.80\",\"24/12/2019\",\"14.10\",\"22/10/2019\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T08:22:04.287Z"}
+{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 11 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:04.287Z"}
+{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 11 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:04.288Z"}
+{"rowLine":"\"Aaron Industries\",\"51.85\",\"10/01/2020\",\"35.45\",\"22/05/2019\"\n","level":"info","message":"parsed row line for csv","timestamp":"2020-01-29T08:22:04.351Z"}
+{"message":{"entity":"local file","action":"write data","status":"initiated","dataDescriptor":"(Line) 12 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:04.351Z"}
+{"message":{"entity":"local file","action":"write data","status":"written","dataDescriptor":"(Line) 12 (Current Page) 1 (Total Pages) 176"},"level":"debug","timestamp":"2020-01-29T08:22:04.351Z"}
+{"message":"click happened","level":"info","timestamp":"2020-01-29T08:22:04.606Z"}
+{"message":"sleeping for 10 seconds","level":"info","timestamp":"2020-01-29T08:22:14.618Z"}
+{"windowHandleCount":1,"windowHandles":["13"],"level":"info","message":"got window handles","timestamp":"2020-01-29T08:22:14.626Z"}
+{"windowHandle":"13","level":"info","message":"switching to window","timestamp":"2020-01-29T08:22:14.627Z"}
+{"windowHandle":"13","level":"info","message":"switched to window","timestamp":"2020-01-29T08:22:14.633Z"}
+{"message":"got form","level":"info","timestamp":"2020-01-29T08:22:14.641Z"}
+{"message":"got div","level":"info","timestamp":"2020-01-29T08:22:14.649Z"}
+{"message":"got table","level":"info","timestamp":"2020-01-29T08:22:14.655Z"}
+{"message":"got spans","level":"info","timestamp":"2020-01-29T08:22:14.666Z"}
+{"pageNo":"2","totalPages":"176","level":"info","message":"next parse","timestamp":"2020-01-29T08:22:14.700Z"}
+{"message":{"entity":"local file","action":"close write stream","status":"initiated"},"level":"debug","timestamp":"2020-01-29T08:22:14.700Z"}
+{"message":{"entity":"local file","action":"close write stream","status":"closed"},"level":"debug","timestamp":"2020-01-29T08:22:14.701Z"}
