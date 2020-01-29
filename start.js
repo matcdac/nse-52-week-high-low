@@ -9,6 +9,12 @@ const fileHelper = require('./lib/file_helper');
 
 const {Builder, By, Key, until} = require('selenium-webdriver');
 
+const webUri = 'https://www.adroitfinancial.com/market/52week-high-low';
+
+const formId = 'form1';
+
+const divId = 'defcontent';
+
 // const divClass = 'table-responsive genlos_table clear gener_table';
 // const tableClass = 'table table-hover footable footable-1 breakpoint-md';
 const tableId = 'body_Middel_ctl01_grdgainer';
@@ -64,10 +70,10 @@ async function proceed(fileWriteStream, columnCount, table, currentPage, totalPa
     }
     const fileWriteStream = await fileHelper.createLocalFileWriteStream(localAbsoluteFilePath);
     
-    await driver.get('https://www.adroitfinancial.com/market/52week-high-low');
+    await driver.get(webUri);
     driver.manage().setTimeouts({
-      //pageLoad: 30000,
-      implicit: 30000,
+      pageLoad: 45000,
+      implicit: 20000,
     });
 
     let table = await driver.findElement(By.id(tableId));
@@ -147,15 +153,50 @@ async function proceed(fileWriteStream, columnCount, table, currentPage, totalPa
       await proceed(fileWriteStream, columnCount, table, currentPage, totalPages);
       if (currentPage != totalPages) {
         const next = await driver.findElement(By.id(nextAnchorId));
-        let clickPromise = await next.click();
+        
+        await next.click();
 
-        await driver.navigate().refresh();
+        logger.info('click happened');
+
+        // await next.submit();
+
+        // await driver.switchTo().activeElement();
+
+        // await driver.switchTo().defaultContent();
+
+        // await driver.navigate().refresh();
         // await driver.wait(until.ableToSwitchToFrame('pageblue'));
 
-        table = await driver.findElement(By.id(tableId));
+        // (await driver.getWindowHandle()).anchor(nextAnchorId);
+
+        // await driver.switchTo().window('default');
+        
+        // await driver.switchTo().frame('current');
+        // logger.info('switched to frame');
+
+        let form = await driver.findElement(By.id(formId));
+
+        logger.info('got form');
+
+        let div = await form.findElement(By.id(divId));
+
+        logger.info('got div');
+
+        table = await div.findElement(By.id(tableId));
+
+        logger.info('got table');
+
         span = await table.findElements(By.className('pageblue'));
+
+        logger.info('got spans');
+
         currentPage = await span[0].getText();
         totalPages = await span[1].getText();
+
+        logger.info('next parse', {
+          pageNo: currentPage,
+          totalPages: currentPage,
+        });
       }
     }
 
