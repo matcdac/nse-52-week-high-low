@@ -26,6 +26,8 @@ const nextAnchorId = 'body_Middel_ctl01_grdgainer_lnk_Next';
 const comma = ',';
 
 const localAbsoluteFilePath = '/space/projects/nse-52-week-high-low/output/data.csv';
+
+const sleepTime = 5000;
  
 async function proceed(fileWriteStream, columnCount, table, currentPage, totalPages) {
 
@@ -80,8 +82,8 @@ async function proceed(fileWriteStream, columnCount, table, currentPage, totalPa
 
     let span = await table.findElements(By.className('pageblue'));
 
-    let currentPage = await span[0].getText();
-    let totalPages = await span[1].getText();
+    let currentPage = parseInt(await span[0].getText());
+    let totalPages = parseInt(await span[1].getText());
 
     logger.info('fetched total number of pages', {
       currentPage: currentPage,
@@ -167,9 +169,9 @@ async function proceed(fileWriteStream, columnCount, table, currentPage, totalPa
 
         logger.info('click happened');
 
-        await driver.sleep(10000);
+        await driver.sleep(sleepTime);
 
-        logger.info('sleeping for 10 seconds');
+        logger.info(`sleeping for ${sleepTime} seconds`);
 
         let windowHandles = await driver.getAllWindowHandles();
 
@@ -222,8 +224,8 @@ async function proceed(fileWriteStream, columnCount, table, currentPage, totalPa
 
         logger.info('got spans');
 
-        currentPage = await span[0].getText();
-        totalPages = await span[1].getText();
+        currentPage = parseInt(await span[0].getText());
+        totalPages = parseInt(await span[1].getText());
 
         logger.info('next parse', {
           pageNo: currentPage,
