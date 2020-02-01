@@ -1,11 +1,11 @@
 
 const os = require('os');
 
-const logger = require('./lib/logger');
+const logger = require('../lib/logger');
 
-const csvHelper = require('./lib/csv_helper');
+const csvHelper = require('../lib/csv_helper');
 
-const fileHelper = require('./lib/file_helper');
+const fileHelper = require('../lib/file_helper');
 
 const {Builder, By, Key, until} = require('selenium-webdriver');
 
